@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.inditex.dao.PriceRepository;
-import com.inditex.dto.Brand;
 import com.inditex.dto.Price;
 
 @Service

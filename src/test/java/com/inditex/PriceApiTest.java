@@ -6,10 +6,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,17 +27,6 @@ public class PriceApiTest {
 
 	@MockBean
 	private PriceService priceService;
-	
-//	@MockBean
-//	private PriceRepository priceRepository;
-	
-	@BeforeEach
-	public void setUp() {
-//		Mockito.when(priceService.getPrices()).thenReturn(getMockedList());
-		
-		
-//		Mockito.when(priceRepository.findAll()).thenReturn(getMockedList());
-	}
 	
 	@Test
 	void test1() throws Exception {
@@ -137,22 +122,5 @@ public class PriceApiTest {
 	            .andExpect(jsonPath("$.price", is(result.getPrice())));
 
 	}
-	
-//	List<Price> getMockedList(){
-//		List<Price> priceList = new ArrayList<Price>();
-//		Price price = new Price(1, LocalDateTime.of(2020, 06, 14, 00, 00, 00), LocalDateTime.of(2020, 12, 31, 23, 59, 59), (long)1, 35455, 0, 35.50, "EUR");
-//		priceList.add(price);
-//		
-//		price = new Price(1, LocalDateTime.of(2020, 06, 14, 15, 00, 00), LocalDateTime.of(2020, 06, 14, 18, 30, 00), (long)2, 35455, 1, 25.45, "EUR");
-//		priceList.add(price);
-//		
-//		price = new Price(1, LocalDateTime.of(2020, 06, 15, 00, 00, 00), LocalDateTime.of(2020, 06, 15, 11, 00, 0), (long)3, 35455, 1, 30.50, "EUR");
-//		priceList.add(price);
-//		
-//		price = new Price(1, LocalDateTime.of(2020, 06, 15, 16, 00, 00), LocalDateTime.of(2020, 12, 31, 23, 59, 59), (long)4, 35455, 1, 38.95, "EUR");
-//		priceList.add(price);
-//		
-//		return priceList;
-//	}
 
 }
